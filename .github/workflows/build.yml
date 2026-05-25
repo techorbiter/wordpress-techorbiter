@@ -70,12 +70,8 @@ jobs:
           # Always pull latest base image
           pull: true
 
-          cache-from: |
-            type=gha
-            type=registry,ref=ghcr.io/${{ github.repository }}:buildcache
-          cache-to: |
-            type=gha,mode=max
-            type=registry,ref=ghcr.io/${{ github.repository }}:buildcache,mode=max
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
 
       - name: Delete old packages
         uses: actions/delete-package-versions@v5
