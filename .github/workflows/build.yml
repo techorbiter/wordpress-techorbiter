@@ -53,7 +53,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: .
-          file: ./Dockerfile
+          # file: ./Dockerfile
           push: true
 
           # PHP version selector
@@ -66,6 +66,9 @@ jobs:
           # Tags + labels
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+
+          # Always pull referenced images
+          pull: true
 
           # Use GH Actions cache
           cache-from: type=gha
