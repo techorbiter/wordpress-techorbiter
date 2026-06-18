@@ -67,9 +67,7 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
 
-          # Always pull latest base image
-          pull: true
-
+          # Use GH Actions cache
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
