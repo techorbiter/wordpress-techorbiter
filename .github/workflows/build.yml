@@ -6,7 +6,7 @@ on:
       - Dockerfile
       - config/**
   schedule:
-    - cron: '0 4 * * 2'   # weekly rebuild (covers upstream updates)
+    - cron: '0 4 * * 2,5'   # weekly rebuild (covers upstream updates)
   workflow_dispatch:
 
 jobs:
